@@ -21,3 +21,7 @@ Thumbs.db
 
 # Config files with sensitive information (customize as needed)
 Config/config.properties
+
+
+#chromedriver
+chromedriver
