@@ -1,0 +1,23 @@
+# IntelliJ IDEA
+.idea/
+
+# Maven
+target/
+
+# TestNG
+test-output/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Config files with sensitive information (customize as needed)
+Config/config.properties
