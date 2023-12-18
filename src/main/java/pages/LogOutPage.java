@@ -9,7 +9,7 @@ public class LogOutPage extends Controller {
     }
 
     private void clickLogOutButton() {
-        waitForVisibilityOfElementByXPath(util.LocatorReader.getLocator("logOutButton")).click();
+        waitForVisibilityOfElementByCssSelector(util.LocatorReader.getLocator("logOutButton")).click();
     }
 
     public void cleanLogOut()  {

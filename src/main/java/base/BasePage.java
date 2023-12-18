@@ -25,8 +25,8 @@ public class BasePage {
         ChromeOptions
                 options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");
-        options.addArguments("--window-size=1920,1080");
+//        options.addArguments("--headless");
+//        options.addArguments("--window-size=1920,1080");
 
 
         new ChromeDriver(options);
@@ -46,8 +46,7 @@ public class BasePage {
 
 
     protected WebElement waitForVisibilityOfElementByXPath(String xpath) {
-        By
-                locator = By.xpath(xpath);
+        By locator = By.xpath(xpath);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     protected WebElement waitForVisibilityOfElementByCssSelector(String cssSelector) {

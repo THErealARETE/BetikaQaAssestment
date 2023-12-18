@@ -7,9 +7,9 @@
     <test verbose="2" name="Parallel Test" parallel="tests" thread-count="5">
         <classes>
             <class name="registration.registrationTest"></class>
-            <class name="BetPlacement.BetPlacementTest"></class>
-            <class name="MyBet.myBetTest"></class>
             <class name="login.LoginTests"></class>
+            <class name="MyBet.myBetTest"></class>
+            <class name="BetPlacement.BetPlacementTest"></class>
         </classes>
     </test>
 </suite>
