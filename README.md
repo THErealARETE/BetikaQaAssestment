@@ -12,3 +12,10 @@ Steps to setup
 3.Open the project and it should build by installing the jar files 
 
 4.when done building, right click the BetikaTestSuite.xml file and click Run....testing.xml to run the tests
+
+
+Parallel Testing implemented with TestNG
+
+Headless Mode 
+
+Alure Reporter
