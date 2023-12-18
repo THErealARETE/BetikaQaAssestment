@@ -6,10 +6,12 @@ import org.openqa.selenium.WebElement;
 import java.io.IOException;
 import java.util.List;
 
+import static util.ConfigReader.getUrl;
+
 public class Controller extends BasePage {
 
     public void openPage() throws IOException {
-        driver.get(util.ConfigReader.getProperty("url"));
+        driver.get(getUrl());
     }
 
     public void selectBetLogic(List<WebElement> elements) {
@@ -21,7 +23,6 @@ public class Controller extends BasePage {
             }
             count++;
 
-            // Break the loop after three clicks
             if (count / 3 == 3) {
                 break;
             }

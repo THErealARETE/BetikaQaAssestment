@@ -20,23 +20,19 @@ public class LoginPage extends Controller {
     }
 
     private void clickLoginButton() {
-        waitForVisibilityOfElementByCssSelector(util.LocatorReader.getLocator("loginButton")).click();
+        waitForVisibilityOfElementByCssSelectorToBeClickable(util.LocatorReader.getLocator("loginButton")).click();
     }
 
     public void cleanLogin(String phoneNumber, String password) throws IOException {
         openPage();
         clickNavigateLoginButton();
-        setPhoneNumber(phoneNumber);
-        setPassword(password);
+        setPhoneNumber(String.valueOf(phoneNumber));
+        setPassword(String.valueOf(password));
         clickLoginButton();
     }
 
     public WebElement getDepositText() {
         return waitForVisibilityOfElementByCssSelector(util.LocatorReader.getLocator("depositButton"));
-    }
-
-    public WebElement getErrorMessageText() {
-        return waitForVisibilityOfElementByCssSelector(util.LocatorReader.getLocator("invalidLoginCredentialMessage"));
     }
 
 }

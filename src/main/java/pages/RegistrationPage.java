@@ -1,7 +1,6 @@
 package pages;
 
 import controller.Controller;
-import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
@@ -40,10 +39,6 @@ public class RegistrationPage extends Controller {
             clickCheckBox();
             clickRegisterButton();
         }
-
-//    public WebElement getVerificationText() {
-//        return waitForVisibilityOfElementByCssSelector(util.LocatorReader.getLocator("verificationNotification"));
-//    }
 }
 
 

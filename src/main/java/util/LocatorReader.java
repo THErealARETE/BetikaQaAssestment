@@ -15,7 +15,7 @@ public class LocatorReader {
 
     private static void loadLocatorsProperties() {
         try {
-            FileInputStream fileInputStream = new FileInputStream("Config/locators.properties");
+            FileInputStream fileInputStream = new FileInputStream("src/Config/locators.properties");
             properties.load(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,13 +1,11 @@
 package base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -18,7 +16,8 @@ public class BasePage {
 
     // this is our base test covering components common to the whole suite
     protected static WebDriver driver;
-    private static WebDriverWait wait;
+    protected static WebDriverWait wait;
+
 
 
     public static void initWebDriver() {
@@ -26,8 +25,8 @@ public class BasePage {
         ChromeOptions
                 options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");
-        options.addArguments("--window-size=1920,1080");
+//        options.addArguments("--headless");
+//        options.addArguments("--window-size=1920,1080");
 
 
         new ChromeDriver(options);
@@ -54,6 +53,11 @@ public class BasePage {
     protected WebElement waitForVisibilityOfElementByCssSelector(String cssSelector) {
         By locator = By.cssSelector(cssSelector);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    protected WebElement waitForVisibilityOfElementByCssSelectorToBeClickable(String cssSelector) {
+        By locator = By.cssSelector(cssSelector);
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
     protected List<WebElement> waitForVisibilityOfElementsByCssSelector(String cssSelector) {
         By locator = By.cssSelector(cssSelector);
