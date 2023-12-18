@@ -25,8 +25,8 @@ public class BasePage {
         ChromeOptions
                 options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-//        options.addArguments("--headless");
-//        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
 
 
         new ChromeDriver(options);
