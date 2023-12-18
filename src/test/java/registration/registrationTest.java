@@ -7,6 +7,8 @@ import pages.RegistrationPage;
 
 import java.io.IOException;
 
+import static util.ConfigReader.getPassword;
+
 public class registrationTest extends BaseTests {
 
     RegistrationPage
@@ -14,7 +16,8 @@ public class registrationTest extends BaseTests {
 
     @Test
     public void testSuccessfulRegistration() throws IOException, InterruptedException {
-        registrationPage.registeration(util.ConfigReader.getProperty("newPhoneNumber"), util.ConfigReader.getProperty("password"));
+        registrationPage.registration( getPassword());
+        System.out.println(util.ConfigReader.getProperty("newPhoneNumber"));
         Thread.sleep(7000);
         String currentUrl = driver.getCurrentUrl();
         String expectedSubstring = "&canVerify=true";

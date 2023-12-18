@@ -1,10 +1,14 @@
 package pages;
 
 import controller.Controller;
+import util.PhoneNumberManager;
 
 import java.io.IOException;
 
+
 public class RegistrationPage extends Controller {
+
+    PhoneNumberManager phoneNumberManager = new PhoneNumberManager();
 
         private void clickNavigateRegisterButton() {
             waitForVisibilityOfElementByLinkText(util.LocatorReader.getLocator("navigateToRegister")).click();
@@ -30,10 +34,12 @@ public class RegistrationPage extends Controller {
             waitForVisibilityOfElementByCssSelector(util.LocatorReader.getLocator("registerButton")).click();
         }
 
-        public void registeration(String phoneNumber, String password) throws IOException {
+        public void registration( String password) throws IOException {
+            long newPhoneNumber = phoneNumberManager.incrementAndUpdate();
+            String phoneNumberString = String.valueOf(newPhoneNumber);
             openPage();
             clickNavigateRegisterButton();
-            setPhoneNumber(phoneNumber);
+            setPhoneNumber(phoneNumberString);
             setPassword(password);
             setConfirmPassword(password);
             clickCheckBox();

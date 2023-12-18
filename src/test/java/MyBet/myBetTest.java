@@ -29,7 +29,6 @@ public class myBetTest extends BaseTests{
             String expectedSubstring = "/b/M";
             Assert.assertTrue(currentUrl.contains(expectedSubstring));
             logOutPage.cleanLogOut();
-
         }
 
 }
